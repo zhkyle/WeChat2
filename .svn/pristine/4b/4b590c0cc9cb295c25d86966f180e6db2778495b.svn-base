@@ -1,0 +1,338 @@
+<!doctype html>
+<html>
+<head>
+<title>通信学院团总支学生会报名</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta name="format-detection" content="telephone=no">
+  <meta content="telephone=no" name="format-detection">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+ 
+  <link rel="stylesheet" href="../../stylesheets/activity_enroll/wsign.css">
+  <link rel="stylesheet" href="../../stylesheets/life/main.css">
+  <script type="text/javascript" src="../../javascripts/jquery-1.8.2.min.js"></script>
+  <style>
+      .topline {
+          color: white !important;
+      }
+  </style>
+  
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="krU46SplE2o5KXqeHMJtdGKrjPHBbKeA/yU8ZG3REoU=" name="csrf-token" />
+</head>
+
+<body>
+<div class="html">
+  <div class="main">
+    <section>
+	 </div>
+  <form accept-charset="UTF-8" action="http://scietx.duapp.com/addStudent" class="new_activity_enroll" data-validate="true" id="new_activity_enroll" method="post" novalidate="novalidate" ><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="krU46SplE2o5KXqeHMJtdGKrjPHBbKeA/yU8ZG3REoU=" /></div>
+      <div class="box box-form">
+        <div class="hd">申请报名</div>
+        <div class="bd">
+          <input id="activity_enroll_activity_id" name="activity_enroll[activity_id]" type="hidden" value="12940" />
+          <input id="activity_enroll_wx_user_id" name="activity_enroll[wx_user_id]" type="hidden" value="69233" />
+		   <p>
+                <span>学号：</span>
+                <input id="activity_enroll_company_name" name="sclass" placeholder="学号" size="30" type="text" />
+              </p>
+              <p>
+                <span>姓名：</span>
+                <input id="activity_enroll_username" name="sname" placeholder="姓名" size="30" type="text" />
+              </p>
+              
+              <p>
+                <span>班级：</span>
+                <input id="activity_enroll_qq" name="snum" placeholder="班级" size="30" type="text" />
+              </p>
+			 <p>
+                <span>手机号码：</span>
+                <input id="activity_enroll_mobile" name="sphone" placeholder="手机号码" size="30" type="text" />
+              </p>
+              <p>
+                <span>心仪部门：</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<select name="sdep">
+				<option value="请选择"><--请选择--></option>
+				<option value="组织部">组织部</option>
+				<option value="红岩班">红岩班</option>
+				<option value="宣传部">宣传部</option>
+				<option value="调研部">调研部</option>
+				<option value="网络部">网络部</option>
+				<option value="青年志愿者协会">青年志愿者协会</option>
+				<option value="社团服务部">社团服务部</option>
+				<option value="科技协会">科技协会</option>
+				<option value="办公室">办公室</option>
+				<option value="学习部">学习部</option>
+				<option value="外联部">外联部</option>
+				<option value="女生部">女生部</option>
+				<option value="生活部">生活部</option>
+				<option value="体育部">体育部</option>
+				<option value="文艺部">文艺部</option>
+				<option value="美宣部">美宣部</option>
+				<option value="自律权益部">自律权益部</option>
+
+				</select>
+               
+              </p>
+        </div>
+      </div>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="submit" value="提交报名" class="btn" />
+      <!--<div class="box-relative"><input type="submit" class="form-submit"/><a class="btn link_submit">提交报名</a></div>-->
+</form><script>//<![CDATA[
+if(window.ClientSideValidations===undefined)window.ClientSideValidations={};window.ClientSideValidations.disabled_validators=[];window.ClientSideValidations.number_format={"separator":".","delimiter":","};if(window.ClientSideValidations.patterns===undefined)window.ClientSideValidations.patterns = {};window.ClientSideValidations.patterns.numericality=/^(-|\+)?(?:\d+|\d{1,3}(?:\,\d{3})+)(?:\.\d*)?$/;if(window.ClientSideValidations.forms===undefined)window.ClientSideValidations.forms={};window.ClientSideValidations.forms['new_activity_enroll'] = {"type":"ActionView::Helpers::FormBuilder","input_tag":"<div class=\"field_with_errors\"><span id=\"input_tag\" /><label for=\"\" class=\"message\"></label></div>","label_tag":"<div class=\"field_with_errors\"><label id=\"label_tag\" /></div>","validators":{}};
+//]]></script>  <div class="box-share">
+    <a class="btn-share"><span class="ico-share">发送给朋友</span></a>
+    <a class="btn-share"><span class="ico-pyq">分享到朋友圈</span></a>
+  </div>
+  </section>
+ 
+  <div class="box">
+    <div class="hd">部门介绍</div>
+    <div class="bd ckeditor_content">
+     
+
+<p><span style="color:rgb(0, 0, 0)">组织部：上联是   管理支部 帮助支书 认识优秀同学汲取经验无数</br>
+下联是   举办活动 五四先班 学习使用技巧丰富大学旅途</br>
+横批是   通信组织部</p>
+</br>
+<p><span style="color:rgb(0, 0, 0)">红岩班：重庆邮电大学红岩班——是学校特色组织，瞻仰烈士不朽容姿，带领我们领略红岩文化，勿忘“爱国，奋斗，团结，奉献”的红岩精神。
+</p>
+</br>
+<p><span style="color:rgb(0, 0, 0)">宣传部：宣传一家亲，你我共携手。宣传部，作为通信学院团总支学生会一大部门，在这里，绝世才华任你展现，海阔天空凭你跃飞，精彩的，搞笑的，严肃的，高端的，统统不容错过。</p></br>
+<p><span style="color:rgb(0, 0, 0)">调研部：通信学院调研部在学校各种学习、竞赛活动调研中起着重要的作用，为了解同学想法及观点而存在。</p></br>
+<p><span style="color:rgb(0, 0, 0)">网络部：网络部以技术为立身之本与联系纽带，沟通内外，传承着网络人的精神，有技术，敢创想，爱极致挑战，更爱Team至上！
+</p></br>
+<p><span style="color:rgb(0, 0, 0)">青年志愿者协会：秉承志愿奉献精神，我们争做最有“纪律性、时效性、团队性、影响力”的服务团体。关爱孤寡老人、情系山区儿童、服务市民学校、领航“三下乡”社会实践……每个志愿奉献的角落都有我们的身影！
+</p></br>
+<p><span style="color:rgb(0, 0, 0)">社团服务部：社团服务部服务特色学生社团，并对其进行指导、管理工作，是致力于丰富我校学生课外活动的部门。
+</p></br>
+<p><span style="color:rgb(0, 0, 0)">科技协会：用科技讲座传递知识，</br>
+以科技竞赛弘扬创新，</br>
+告知新鲜科技讯息，</br>
+提供创意竞赛平台。</br>
+营造科技氛围，服务通信学子。</br>
+</p></br>
+<p><span style="color:rgb(0, 0, 0)">办公室：办公室是学生会的中枢系统，起到上传下达的作用。它协助各部门工作，协调各部门关系，使学生会的日常工作更流畅的进行。</p></br>
+<p><span style="color:rgb(0, 0, 0)">学习部：学习部作为活动性部门，通过举办精彩的辩论赛和大型表彰大会，开展学业辅导讲座及交流会，为同学们提供学习资源和锻炼自我的舞台</p></br>
+<p><span style="color:rgb(0, 0, 0)">外联部：外联部是联系社会与学校的重要部门，主要的任务就是为学生会和学生活动筹集资金，同时外联部也兼有联系各高校的职能。</p></br>
+<p><span style="color:rgb(0, 0, 0)">女生部：女生部隶属于学院学生会，是一个可以提升女生气质和修养，培养优雅礼仪姿态的活动性部门。
+</p></br>
+<p><span style="color:rgb(0, 0, 0)">生活部：生活部是一个以通信学院广大学生的日常生活需要为基础，以服务学生为宗旨，丰富学生生活，开展部门特色活动的组织。</p></br>
+<p><span style="color:rgb(0, 0, 0)">体育部：通信与信息工程体育部是一个致力于在学校范围内推广各项体育运动增强学生体质，丰富重邮学子的课余生活的大家庭。</p></br>
+<p><span style="color:rgb(0, 0, 0)">文艺部：作为院学生会的窗口部门，文艺部一直以来肩负着丰富校园艺术生活的重担。承办和协办各类大型文艺活动，丰富学生的课余生活，同时也是一个锻炼能力的部门。并非只有才艺出众者才能进入文艺部，我们欢迎任何一个积极、热情、有责任心的同学加入文艺部这个大家庭。我们将会在团结协作、高效创新的工作过程中锻炼部员的各种工作技能，在例会交流、部门培训中培养部员的组织管理能力。</p></br>
+<p><span style="color:rgb(0, 0, 0)">美宣部：：通信与信息工程学院学生会美宣部，作为一个技术职能部门，是学生会媒体宣传的关键所在，是院学生会对外展示的窗口。</p></br>
+<p><span style="color:rgb(0, 0, 0)">自律权益部：自律权益部隶属于通信与信息工程学院学生会，是一个维护广大同学权益，搭建学校与学生沟通维权的桥梁部门。
+</p>
+
+<p><span style="color:rgb(0, 0, 0)"><span style="font-size:18px"><strong><span style="background-color:#FFEC8B">招新啦(*∩_∩*)：</span></strong></span></span></p>
+
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:18px"><span style="background-color:rgb(0, 255, 255)">一面地址：</span><span style="color:rgb(255, 0, 0)">二教 &nbsp;</span>
+<p><span style="font-size:18px"><span style="background-color:rgb(0, 255, 255)">一面时间：</span><span style="color:rgb(255, 0, 0)">9月26日周五晚7：00 &nbsp;</span>
+    </div>
+
+     
+
+
+<div class="pop pop-share">
+  <div class="pop-bg"></div>
+  <div class="pop-bd">
+    <p class="note-share"></p>
+  </div>
+</div>
+<style>
+    .link_submit{
+        background: -moz-linear-gradient(center top , #E45245, #E8645A) repeat scroll 0 0 rgba(0, 0, 0, 0);
+        border-color: #E45245;
+        border-style: solid;
+        border-width: 1px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+        color: #FFFFFF;
+        float: none;
+        font-size: 16px;
+        height: 35px;
+        line-height: 35px;
+        margin: 10px 2%;
+        text-align: center;
+        border-radius:5px;
+        /*width: 96%;*/
+    }
+</style>
+<script>
+    $(function(){
+        $(".reset").click(function(){
+            $(this).parent().find('.text').val('');
+        })
+    })
+</script>
+
+<script type="text/javascript">
+    $(function() {
+        $('.btn').click(function() {            
+			if($('#activity_enroll_username').val() == ''){
+                alert('姓名不能为空');
+                $('#activity_enroll_username').focus();
+                return false;
+            }else if($('#activity_enroll_contect').val() == ''){
+                alert('联系电话不能为空');
+                $('#activity_enroll_contect').focus();
+                return false;
+            }else if($('#activity_enroll_qq').val() == ''){
+                alert('请输入班级');
+                $('#activity_enroll_qq').focus();
+                return false;
+            }else if($('#activity_enroll_province_name').val() == ''){
+                alert('姓名不能为空');
+                $('#activity_enroll_province_name').focus();
+                return false;
+            }else if($('#activity_enroll_city_name').val() == ''){
+                alert('姓名不能为空');
+                $('#activity_enroll_city_name').focus();
+                return false;
+            }else if($('#activity_enroll_company_address').val() == ''){
+                alert('姓名不能为空');
+                $('#activity_enroll_company_address').focus();
+                return false;
+            }else if($('#activity_enroll_company_tel').val() == ''){
+                alert('姓名不能为空');
+                $('#activity_enroll_company_tel').focus();
+                return false;
+            }else if($('#activity_enroll_home_tel').val() == ''){
+                alert('家庭电话不能为空');
+                $('#activity_enroll_home_tel').focus();
+                return false;
+            }else if($('#activity_enroll_mobile').val() == ''){
+                alert('手机号码不能为空');
+                $('#activity_enroll_mobile').focus();
+                return false;
+            }else if($('#activity_enroll_mobile').val() && !test_mobile_number($('#activity_enroll_mobile').val()) ){
+                alert('手机号码格式不正确');
+                $('#activity_enroll_mobile').focus();
+                return false;
+            }else if($('#activity_enroll_email').val() == ''){
+                alert('邮箱不能为空');
+                $('#activity_enroll_email').focus();
+                return false;
+            }else if($('#activity_enroll_email').val() && !test_email_number($('#activity_enroll_email').val()) ){
+                alert('邮箱格式不正确');
+                $('#activity_enroll_email').focus();
+                return false;
+            }
+        });
+    });
+
+
+
+    // 手机号码正则表达式
+    function test_mobile_number(mobile_number) {
+        if (mobile_number == undefined) {
+            return false;
+        }
+        var mobile_reg = /^\d{11}$/;
+        if (mobile_reg.test(mobile_number)){
+            return true;
+        };
+        return false;
+    }
+
+    // 邮箱正则表达式
+    function test_email_number(email_number) {
+        if (email_number == undefined) {
+            return false;
+        }
+        var email_reg = /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i;
+        if (email_reg.test(email_number)){
+            return true;
+        };
+        return false;
+    }
+    $(function(){
+        //发送给朋友 & 分享到朋友圈
+        $(".btn-share").on("click",function(){
+            $(".pop-share").show();
+        });
+        $(".pop-share").on("click",function(){
+            $(".pop-share").hide();
+        });
+
+    });
+    $(".ckeditor_content img").css({"width":"auto","height":"auto"})
+</script>
+<style>
+
+    .box-relative input{position:absolute; top:0; left:0;}
+    .box-relative input{height:100%; z-index:10;opacity:0;
+        filter:alpha(opacity=0);
+        -moz-opacity:0;
+        -khtml-opacity:0;}
+    .box-relative .btn{ left:50%;  z-index:0;}
+    .ckeditor_content ol,
+    .ckeditor_content ul{
+        float:left;
+        display:block;
+        -webkit-margin-before: 0em;
+        -webkit-margin-after: 0em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        -webkit-padding-start: 20px;
+    }
+    .ckeditor_content ul,
+    .ckeditor_content ol,
+    .ckeditor_content li{word-spacing: normal;
+        word-break: normal;
+        word-break: break-all;}
+    .box .bd .ckeditor_content p{width:100%;
+        margin:0;
+        word-spacing: normal;
+        word-break: normal;
+        word-break: break-all;}
+    .ckeditor_content img{ max-width:100%;}
+    .ckeditor_content ol li{list-style:decimal outside none;margin-left: 30px;}
+    .ckeditor_content ul li{list-style:disc outside none;margin-left: 30px;}
+    .ckeditor_content em, em span{font-style:oblique;}
+</style>
+
+  </div><!-- main end -->
+</div><!-- html end -->
+<style>
+<!--
+* {margin:0;padding:0;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+html, body {
+    height: 100%
+}
+.html {min-height: 100%;}
+.main {
+overflow-x: hidden;
+overflow-y: auto;
+padding-bottom: 50px;}
+footer {position: relative;
+margin-top: -50px;
+height: 30px;
+clear:both;
+text-align:center; padding:20px 0 0 0; width: 100%;}
+body:before {
+content:"";
+height:100%;
+float:left;
+width:0;
+margin-top:-32767px;
+}
+/*footer*/
+footer,
+footer a{ color:#888; font-size: 12px; text-decoration: none;}
+-->
+</style>
+
+
+
+</body>
+
+<script>
+</script>
+
+</html>

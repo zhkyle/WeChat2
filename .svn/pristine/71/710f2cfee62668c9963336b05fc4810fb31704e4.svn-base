@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>MyScie</servlet-name>
+		<servlet-class>com.scie.wechat.servlet.MyScie</servlet-class>
+	</servlet>
+	<servlet>
+		<description>addStudent</description>
+		<display-name>addStudent</display-name>
+		<servlet-name>addStudent</servlet-name>
+		<servlet-class>com.scie.wechat.servlet.addStudent</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AccessTokenServlet</servlet-name>
+		<servlet-class>com.scie.wechat.servlet.AccessTokenServlet</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MyScie</servlet-name>
+		<url-pattern>/MyScie</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>addStudent</servlet-name>
+		<url-pattern>/addStudent</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AccessTokenServlet</servlet-name>
+		<url-pattern>/AccessTokenServlet</url-pattern>
+	</servlet-mapping>
+</web-app>

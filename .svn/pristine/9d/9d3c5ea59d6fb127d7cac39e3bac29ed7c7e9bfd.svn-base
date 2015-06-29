@@ -1,0 +1,322 @@
+package com.scie.wechat.reply;
+
+import javax.servlet.http.HttpServletRequest;
+
+import com.scie.wechat.bean.UserRecorder;
+import com.scie.wechat.message.resp.NewsMessage;
+import com.scie.wechat.message.resp.TextMessage;
+import com.scie.wechat.service.VoterManager;
+import com.scie.wechat.util.MessageUtil;
+
+public class AutoReply {
+
+	private String classView = "<a href=\"http://mp.weixin.qq.com/s?__biz=MjM5Nzc4NjczMg==&mid=201096557&idx=1&sn=71ff9fa35b6e577ea5aa723eca23cffe#rd\">选手风采展示</a>\n0--返回";
+	private String secReply = "您可以选择以下功能:\n1--了解各个选手\n2--为他们投票\n3--查看当前票数\n0--返回";
+	private String activityMsg = "以下是最近的学院活动：\n1--星声音主持人大赛\n0--返回";
+	private String endMsg = "投票已结束,输入0返回";
+	private String errMsg = "未知命令，请根据对应数字重新输入！";
+
+	private String reqContent;
+
+	private String fromUserName;
+
+	private String toUserName;
+
+	private long createTime;
+
+	public AutoReply() {
+
+	}
+
+	public AutoReply(String reqContent, String fromUserName, String toUserName,
+			long createTime, HttpServletRequest request) {
+		super();
+		this.reqContent = reqContent;
+		this.fromUserName = fromUserName;
+		this.toUserName = toUserName;
+		this.createTime = createTime;
+	}
+
+	private TextMessage creatTest() {
+		TextMessage textMessage = new TextMessage();
+		textMessage.setToUserName(fromUserName);
+		textMessage.setFromUserName(toUserName);
+		textMessage.setCreateTime(createTime);
+		textMessage.setMsgType(MessageUtil.RESP_MESSAGE_TYPE_TEXT);
+		return textMessage;
+	}
+
+	public long getCreateTime() {
+		return createTime;
+	}
+
+	public String getFromUserName() {
+		return fromUserName;
+	}
+
+	public String getReqContent() {
+		return reqContent;
+	}
+
+	public String getToUserName() {
+		return toUserName;
+	}
+
+	public void setCreateTime(long createTime) {
+		this.createTime = createTime;
+	}
+
+	public void setFromUserName(String fromUserName) {
+		this.fromUserName = fromUserName;
+	}
+
+	public void setReqContent(String reqContent) {
+		this.reqContent = reqContent;
+	}
+
+	public void setToUserName(String toUserName) {
+		this.toUserName = toUserName;
+	}
+
+	public String subscriptionReply() {
+		String msg = "欢迎关注“重邮通信学院”！欢迎新同学！\n请根据序号回复对应数字\n1--学院介绍\n2--加入我们（招新报名）\n3--14级辅导员联系方式\n4--免费电话\n5--重邮新闻(通信学院)\n6--星声音主持人大赛投票\n7--联系我们\n回复任意字母显示菜单";
+		return msg;
+	}
+
+	// 第一级菜单
+	public String textReply() {
+		String msg = "";
+		if (reqContent.equals("1")) {
+			NewStudentReply newsReply = new NewStudentReply();
+			NewsMessage nm = newsReply.news(fromUserName, toUserName,
+					createTime, 2);
+			msg = MessageUtil.newsMessageToXml(nm);
+		} else if (reqContent.equals("9999")) {
+			msg = "站酷：http://www.zcool.com.cn\n素材中国：http://www.sccnn.com\n昵图：http://www.nipic.com\n需要昵图账号的同学，请联系美宣部谢谢！";
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+		} else if (reqContent.equals("3")) {
+			msg = "桂晓菁老师 62461089(办) 13996379964\n袁泉老师 62461089(办)15922589189";
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+
+		} else if (reqContent.equals("4")) {
+			CallReply callReply = new CallReply();
+			NewsMessage nm = callReply.news(fromUserName, toUserName,
+					createTime);
+			msg = MessageUtil.newsMessageToXml(nm);
+		} else if (reqContent.equals("5")) {
+			msg = new NewsReply().qinqinNews();
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+		} else if (reqContent.equals("6")) {
+			msg = activityMsg;
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+			UserRecorder.getStatus().put(fromUserName, 2);
+
+		} else if (reqContent.equals("7")) {
+			msg = "如遇系统故障，数据错误等给您造成了不便，还请谅解，我们会在第一时间内修复。微信合作也请联系以下邮箱。谢谢！\n联系方式：  cqtianle@163.com";
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+		} else if (reqContent.equals("2") || reqContent.equals("招新")
+				|| reqContent.equals("报名")) {
+			/*
+			 * NewStudentReply newsReply = new NewStudentReply(); NewsMessage nm
+			 * = newsReply.news(fromUserName, toUserName, createTime, 1); msg =
+			 * MessageUtil.newsMessageToXml(nm);
+			 */
+			msg = "<a href='http://scietx.duapp.com/app/activity_enrolls/index.html'>加入我们，点击报名</a>";
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+		} else {
+			msg = this.subscriptionReply();
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+		}
+		return msg;
+	}
+
+	// 第二级菜单(status==2)
+	public String textReply_activity() {
+		String msg = "";
+		// 处理先进班集体答辩活动
+		if (reqContent.equals("1")) {
+			msg = secReply;
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+			UserRecorder.getStatus().put(fromUserName, 3);
+		} else if (reqContent.equals("0")) {
+			msg = this.subscriptionReply();
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+			UserRecorder.getStatus().remove(fromUserName);
+		} else {
+			msg = errMsg;
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+		}
+
+		return msg;
+	}
+
+	// 第三级菜单(status==3)
+	public String textReply_activity_advancedClass() {
+		String msg = "";
+		// 处理展示
+		if (reqContent.equals("1")) {
+			msg = classView;
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+			UserRecorder.getStatus().put(fromUserName, 41);
+		}
+		// 处理投票
+		else if (reqContent.equals("2")) {
+			/*msg = "为他们投票:(请回复1-10)\n1--王海洲\n2--李宗强"
+					+ "\n3--王洁磊\n4--高权奥"
+					+ "\n5--姚晓芳\n6--刘俊杰"
+					+ "\n7--吴文静\n8--晏飞扬"
+					+ "\n9--刘芳岑\n10--连焕嘉"
+					+ "\n0--返回";*/
+			msg = endMsg;
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+//			UserRecorder.getStatus().put(fromUserName, 42);
+		}
+		// 查看票数
+		else if (reqContent.equals("3")) {
+			msg = voteView();
+			msg = msg + "\n99--返回主菜单";
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+			UserRecorder.getStatus().put(fromUserName, 3);
+		}
+
+		// 返回
+		else if (reqContent.equals("0")) {
+			msg = activityMsg;
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+			UserRecorder.getStatus().put(fromUserName, 2);
+		}
+		// 返回主菜单
+		else if (reqContent.equals("99")) {
+			msg = subscriptionReply();
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+			UserRecorder.getStatus().put(fromUserName, 1);
+		}
+
+		else {
+			msg = errMsg;
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+		}
+		return msg;
+	}
+
+	// 第四级菜单(status==41)班级展示
+	public String textReply_activity_advancedClass_show() {
+		String msg = "";
+		// 处理相关板件的展示
+
+		if (reqContent.equals("1")) {
+			msg = classView;
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+
+		}
+
+		// 返回
+		else if (reqContent.equals("0")) {
+			msg = secReply;
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+			UserRecorder.getStatus().put(fromUserName, 3);
+		}
+
+		else {
+			msg = errMsg;
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+		}
+		return msg;
+	}
+
+	// 第四级菜单(status==42)班级投票
+	public String textReply_activity_advancedClass_vote() {
+		String msg = "";
+		int reqNum;
+		// 处理相关班级票数存储
+		try {
+			reqNum = Integer.parseInt(reqContent);
+		} catch (NumberFormatException e) {
+
+			msg = errMsg;
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+			return msg;
+		}
+		// 投票，相应班级得票数+1
+		if (reqNum > 0 && reqNum < 11) {
+			// 验证用户是否已经投过票
+			if (!VoterManager.vote(fromUserName, reqNum))
+				msg = "您今天已经投过票了，请明天再来!\n输入任意字母返回主菜单";
+			else {
+				msg = "投票成功，感谢您的参与！\n输入任意字母返回主菜单";
+			}
+
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+			UserRecorder.getStatus().remove(fromUserName);
+		}
+		// 返回
+
+		else if (reqContent.equals("0")) {
+
+			msg = secReply;
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+			UserRecorder.getStatus().put(fromUserName, 3);
+		}
+
+		else {
+			msg = errMsg;
+			TextMessage tm = creatTest();
+			tm.setContent(msg);
+			msg = MessageUtil.textMessageToXml(tm);
+		}
+		return msg;
+	}
+
+	private String voteView() {
+
+		VoterManager vm = new VoterManager();
+		String msg = vm.voteCount();
+		msg = msg + secReply;
+		return msg;
+	}
+
+}
